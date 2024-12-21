@@ -11,16 +11,22 @@ pipeline {
         stage('S3 Upload') {
             steps {
                 withAWS(region: 'ap-south-1', credentials: 'c6f685f1-0f87-4962-bf2e-72e9bd59f7a5') {
-                    sh '''
-                        # List contents to verify files are available
-                        ls -la
+                    script {
+                        // List contents to verify files are available
+                        sh 'ls -la'
 
-                        # Upload the index.html file to the S3 bucket 
-                        aws s3 cp index.html s3://xprepo-bucket/
+                        // Check if the file index.html exists in the workspace
+                        def fileExists = sh(script: 'test -f index.html && echo "exists" || echo "not found"', returnStdout: true).trim()
+                        if (fileExists == "not found") {
+                            error "index.html not found in the workspace"
+                        }
 
-                        # Optionally, you can upload additional assets (like CSS, JS, etc.)
-                        # aws s3 cp ./assets/ s3://xprepo-bucket/assets/ --recursive
-                    '''
+                        // Upload the index.html file to the S3 bucket
+                        sh 'aws s3 cp index.html s3://sami22-bucket/'
+
+                        // Optionally, you can upload additional assets (like CSS, JS, etc.)
+                        // sh 'aws s3 cp ./assets/ s3://sami22-bucket/assets/ --recursive'
+                    }
                 }
             }
         }
