@@ -22,10 +22,10 @@ pipeline {
                         }
 
                         // Upload the index.html file to the S3 bucket
-                        sh 'aws s3 cp index.html s3://sami22-bucket/'
+                        sh 'aws s3 cp index.html s3://sami22/'
 
                         // Optionally, you can upload additional assets (like CSS, JS, etc.)
-                        // sh 'aws s3 cp ./assets/ s3://sami22-bucket/assets/ --recursive'
+                        // sh 'aws s3 cp ./assets/ s3://sami22/assets/ --recursive'
                     }
                 }
             }
