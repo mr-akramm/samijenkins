@@ -3,43 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Diagram</title>
+    <title>Jenkins Pipeline Example</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
-
-        canvas {
-            border: 1px solid black;
+        h1 {
+            text-align: center;
+            color: #0073e6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stage {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .stage h2 {
+            margin-top: 0;
+        }
+        .diagram {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .diagram img {
+            width: 100%;
+            max-width: 500px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Simple Diagram: Circle and Rectangle</h1>
+    <div class="container">
+        <h1>Jenkins Pipeline Example</h1>
+        
+        <div class="stage">
+            <h2>1. Checkout Stage</h2>
+            <p>This stage checks out the code from your Git repository to the Jenkins workspace. It ensures that the pipeline has access to the latest source code.</p>
+        </div>
 
-    <canvas id="myCanvas" width="400" height="400"></canvas>
-
-    <script>
-        var canvas = document.getElementById("myCanvas");
-        var ctx = canvas.getContext("2d");
-
-        // Draw a circle
-        ctx.beginPath();
-        ctx.arc(150, 150, 50, 0, 2 * Math.PI);
-        ctx.fillStyle = "skyblue";
-        ctx.fill();
-        ctx.stroke();
-
-        // Draw a rectangle
-        ctx.beginPath();
-        ctx.rect(200, 100, 150, 100);
-        ctx.fillStyle = "orange";
-        ctx.fill();
-        ctx.stroke();
-    </script>
-
-</body>
-</html>
+        <div class="stage">
+            <h2>2. S3 Upload Stage</h2>
+            <p>In this stage, the pipeline uploads the 'index.html' file (or other assets) to an AWS S3 bucket. It ensures tha
