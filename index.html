@@ -17,20 +17,45 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            overflow: hidden;
         }
         h1 {
             font-size: 4rem;
             animation: bounce 1s infinite alternate;
             color: #ff6347;
+            margin-bottom: 20px;
         }
         h2 {
             font-size: 2rem;
             color: #32cd32;
+            margin-top: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
         }
         .balloon {
             font-size: 5rem;
             animation: float 3s ease-in-out infinite;
             color: #ff1493;
+            margin: 10px;
+        }
+        .cake {
+            font-size: 6rem;
+            animation: cakeBounce 1s infinite alternate;
+            margin: 20px;
+            color: #ff6347;
+        }
+        .drink {
+            font-size: 4rem;
+            margin-top: 20px;
+            color: #32cd32;
+        }
+        .party {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
         }
         @keyframes bounce {
             0% {
@@ -51,17 +76,34 @@
                 transform: translateY(0);
             }
         }
-        .container {
-            text-align: center;
-            padding: 20px;
+        @keyframes cakeBounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-15px);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🎉 Happy Birthday Raheem! 🎉</h1>
-        <h2>Wishing you a day filled with joy and happiness!</h2>
-        <div class="balloon">🎈</div>
+        <h2>Wishing you a day full of joy and celebration!</h2>
+        
+        <!-- Animated Cake -->
+        <div class="cake">🎂</div>
+        
+        <!-- Balloons and Drinks -->
+        <div class="party">
+            <div class="balloon">🎈</div>
+            <div class="balloon">🎈</div>
+            <div class="balloon">🎈</div>
+        </div>
+        
+        <div class="drink">🍹</div>
+        <div class="drink">🍷</div>
+        
     </div>
 </body>
 </html>
