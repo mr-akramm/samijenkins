@@ -3,46 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batman Logo</title>
+    <title>Happy Birthday Raheem!</title>
     <style>
         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #4b0082;
+            text-align: center;
             margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #000;
+            flex-direction: column;
         }
-        .batman-logo {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            background-color: #ffcc00;
-            border-radius: 50%;
-            overflow: hidden;
+        h1 {
+            font-size: 4rem;
+            animation: bounce 1s infinite alternate;
+            color: #ff6347;
         }
-        .batman-logo:before,
-        .batman-logo:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 150px;
-            height: 150px;
-            background-color: #ffcc00;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+        h2 {
+            font-size: 2rem;
+            color: #32cd32;
         }
-        .batman-logo:before {
-            clip-path: polygon(50% 0%, 0% 30%, 20% 100%, 80% 100%, 100% 30%);
+        .balloon {
+            font-size: 5rem;
+            animation: float 3s ease-in-out infinite;
+            color: #ff1493;
         }
-        .batman-logo:after {
-            clip-path: polygon(50% 0%, 0% 30%, 20% 100%, 80% 100%, 100% 30%);
-            transform: translate(-50%, -50%) rotate(180deg);
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="batman-logo"></div>
+    <div class="container">
+        <h1>🎉 Happy Birthday Raheem! 🎉</h1>
+        <h2>Wishing you a day filled with joy and happiness!</h2>
+        <div class="balloon">🎈</div>
+    </div>
 </body>
 </html>
