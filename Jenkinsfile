@@ -10,7 +10,7 @@ pipeline {
 
         stage('S3 Upload') {
             steps {
-                withAWS(region: 'ap-south-1', credentials: '113fe25f-89d9-4580-a591-336b6a60839f') {
+                withAWS(region: 'ap-south-1', credentials: 'a068f38a-acec-41d8-afe0-07cc9f0eb1a6') {
                     script {
                         // Check if the index.html file exists
                         def fileExists = sh(script: 'test -f index.html && echo "exists" || echo "not found"', returnStdout: true).trim()
