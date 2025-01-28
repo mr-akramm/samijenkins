@@ -10,7 +10,7 @@ pipeline {
 
         stage('S3 Upload') {
             steps {
-                withAWS(region: 'ap-south-1', credentials: 'a068f38a-acec-41d8-afe0-07cc9f0eb1a6') {
+                withAWS(region: 'us-east-1', credentials: 'a068f38a-acec-41d8-afe0-07cc9f0eb1a6') {
                     script {
                         // Check if the index.html file exists
                         def fileExists = sh(script: 'test -f index.html && echo "exists" || echo "not found"', returnStdout: true).trim()
@@ -19,7 +19,7 @@ pipeline {
                         }
 
                         // Upload the index.html file to the S3 bucket
-                        sh 'aws s3 cp index.html s3://sam11222/'
+                        sh 'aws s3 cp index.html s3://jens-buc/'
                     }
                 }
             }
