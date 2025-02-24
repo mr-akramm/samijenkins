@@ -19,7 +19,7 @@ pipeline {
                         }
 
                         // Upload the index.html file to the S3 bucket
-                        sh 'aws s3 cp index.html s3://jens-buc/'
+                        sh 'aws s3 cp index.html s3://pro1110/'
                     }
                 }
             }
